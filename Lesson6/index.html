@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Lesson6</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="container">
+  <h1>Lesson6</h1>
+  <ul id="personalData"></ul>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// 第一階層が配列で、第2階層がオブジェクト（連想配列）
+datas = [ // 第一階層がブラケット[]になっているから配列
+  { name: '侍太郎', age: 36, gender: '男性', address: '東京都', phoneNumber: '070-0809-1160' }, // 第2階層で、オブジェクト（連想配列）
+  { name: '侍花子', age: 33, gender: '女性', address: '京都府', phoneNumber: '999-9999-9999' } // 第2階層で、オブジェクト（連想配列）
+];
+console.log(datas[0]);
+
+const personalData = document.getElementById('personalData');
+datas.forEach( v => {
+  let li = document.createElement("li"); // liタグを生成している
+    li.classList.add("list-group-item"); // Bootstrapのリスト用クラス
+    li.classList.add("text-info"); // Bootstrapのフォントカラー用クラス
+    li.innerHTML = v['name']; // liタグの中にhtmlの記述としてフルーツを入れ込んでいる
+    personalData.append(li); // liタグをulタグの中に入れ込んでいる
+});
+// const personalData1 = { name: '侍太郎', age: 36, gender: '男性', address: '東京都', phoneNumber: '070-0809-1160' };
+// const personalData2 = { name: '侍花子', age: 33, gender: '女性', address: '京都府', phoneNumber: '999-9999-9999' };
+
+const addTwoArguments = (data2) => {
+  // 与えられた引数priceと引数shippingFeeを加算し、その値を出力する
+  console.log(data2['price'] + data2['shippingFee'] + '円');
+}
+
+const addTwoArguments2 = (price, shippingFee, name="", age="") => {
+  // 与えられた引数priceと引数shippingFeeを加算し、その値を出力する
+  console.log(price + shippingFee + '円');
+}
+
+const data2 = {
+  price: 1000,
+  shippingFee: 300
+};
+console.log( addTwoArguments(data2) );
+console.log( addTwoArguments2(1000, 300, '侍花子', 23) );
+</script>
+
+</body>
+</html>

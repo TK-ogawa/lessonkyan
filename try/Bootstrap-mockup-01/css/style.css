@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.bg-header {
+  background-color: rgb(139, 141, 141);
+}
+
+.nav-link {
+  text-align: left;
+}
+
+.top {
+  background-color: rgb(189, 189, 189)
+}
+
+.end {
+  background-color: rgb(23, 162, 184);
+}
