@@ -43,7 +43,7 @@ $fromName = "テスト送信者";
 
 
 /**
- * SMTPサーバーのホスト（URL）
+ * SMTPサーバーのホスト（URL）送信サーバー
  */
 $mailHost = 'sandbox.smtp.mailtrap.io';
 
@@ -78,6 +78,7 @@ $mailPort = 2525;
 
 /**
  * フォーム送信内容
+ * ヒアドキュメント
  */
 $input = <<<EOT
 お名前： {$post['yourName']}
@@ -99,7 +100,7 @@ $sendErrors = [];
 
 
 /**
- * メース送信時の言語設定
+ * メール送信時の言語設定
  */
 mb_language('uni');
 mb_internal_encoding('UTF-8');
